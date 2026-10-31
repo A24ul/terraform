@@ -145,16 +145,10 @@ resource "aws_instance" "web_server_instance" {
                 EOF
 }
 
-#resource "aws_key_pair" "demo" {
-#  key_name   = "terraform-demo-key"
-#  public_key = file("D:\Terraform\Crash_Course_FCC\id_ed25519.pub")
-#}
-
 /*
 resource "aws_instance" "my_first_instance" {
   ami           = "ami-0dd60a46ecc6eac16"
   instance_type = "t3.micro"
-  #    key_name = aws_key_pair.demo.key_name
   tags = {
     Name = "My_first_EC2_with_terraform"
   }
