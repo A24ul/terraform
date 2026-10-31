@@ -1,0 +1,32 @@
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+*.pem
+id_ed25519
+
+# Local provider cache (can be hundreds of MB, and GitHub rejects files over 100MB)
+.terraform/
+
+# State
+*.tfstate
+*.tfstate.*
+
+# Variable files that may contain secrets
+*.tfvars
+*.tfvars.json
+
+# Plans and logs
+*.tfplan
+crash.log
+crash.*.log
+
+# Local overrides
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# CLI config
+.terraformrc
+terraform.rc
