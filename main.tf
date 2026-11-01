@@ -152,7 +152,7 @@ resource "aws_instance" "web_server_instance" {
 variable "instance_type" {
     description = "EC2 instance type" # This description will be printed and asks for user input when you run 'terraform apply/destroy'
     type = string  # What will be the user input data type
-#    default = "t3.small"  # if no imput is given, it will take this value.
+    default = "t3.small"  # if no imput is given, it will take this value.
 }
 
 /*
