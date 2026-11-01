@@ -125,7 +125,8 @@ resource "aws_eip" "lb" {
 
 resource "aws_instance" "web_server_instance" {
   ami               = "ami-0dd60a46ecc6eac16"
-  instance_type     = "t3.micro"
+#  instance_type     = "t3.micro"
+  instance_type     = var.instance_type
   availability_zone = "ap-southeast-2a"
   key_name          = "key_pair"
   network_interface {
@@ -143,6 +144,15 @@ resource "aws_instance" "web_server_instance" {
                 sudo systemctl start apache2
                 sudo bash -c 'echo your first web server > /var/www/html/index.html'
                 EOF
+}
+
+
+# Declaring variables:
+
+variable "instance_type" {
+    description = "EC2 instance type" # This description will be printed and asks for user input when you run 'terraform apply/destroy'
+    type = string  # What will be the user input data type
+#    default = "t3.small"  # if no imput is given, it will take this value.
 }
 
 /*
